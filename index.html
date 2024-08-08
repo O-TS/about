@@ -4,20 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my webpage</title>
+    <title>My Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
         }
 
         header {
-            background: #333;
+            background-color: #083379;
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav {
@@ -26,80 +31,153 @@
         }
 
         nav a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f4f4f4;
         }
 
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
         }
 
         #about, #portfolio, #contact {
-            padding: 20px 0;
+            padding: 50px 0;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
         }
 
         #about p, #contact p {
-            text-align: center;
+            text-align: justify;
+            margin: 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #3b3b3b;
         }
 
         #portfolio {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .portfolio-item {
-            width: 30%;
-            margin-bottom: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
         }
 
         .portfolio-item img {
             width: 100%;
             height: auto;
+            display: block;
         }
 
         .portfolio-item h3 {
-            padding: 10px;
+            padding: 15px;
             text-align: center;
+            font-size: 1.3rem;
+            color: #333;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         #contact form {
             display: flex;
             flex-direction: column;
-            width: 50%;
+            width: 100%;
+            max-width: 600px;
             margin: 0 auto;
         }
 
         #contact input, #contact textarea {
-            margin-bottom: 10px;
-            padding: 10px;
+            margin-bottom: 15px;
+            padding: 15px;
             font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        #contact input:focus, #contact textarea:focus {
+            border-color: #3ca8af;
         }
 
         #contact button {
-            padding: 10px;
-            background: #333;
+            padding: 15px;
+            background-color: #4CAF50;
             color: #fff;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact button:hover {
+            background-color: #45a049;
         }
 
         footer {
-            background: #333;
+            background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+
+            #about p, #contact p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                font-size: 14px;
+                margin: 0 8px;
+            }
+
+            #about p, #contact p {
+                font-size: 0.9rem;
+            }
+
+            #contact button {
+                font-size: 1rem;
+                padding: 12px;
+            }
         }
     </style>
 </head>
@@ -109,7 +187,7 @@
         <h1>My Portfolio</h1>
         <nav>
             <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#portfolio">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -117,25 +195,25 @@
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
-            <p align="justify">My background is quite diverse and that gives me the advantage of being able to understand in depth the needs of a project from every aspect and exceed the expectations of the stakeholders, with intuitive user-friendly experiences.
-            On a normal day, you will find me with a cup of tea on my computer, designing or reviewing data from user feedback, to validate my designs. Regarding my character, I have a "can-do" attitude, a positive mindset, goal-oriented and trustworthy.
-            It is important to me to have a good relationship with my colleagues and wake up every morning with the urge to meet the team and create something new!
-            </p>
+            <p>Hello, Fotis here! I'm a Copenhagen-based <b>Product designer & HCI specialist</b>, with a developer's touch.
+                <br>My job is to navigate the intersection or user needs, business goals and technical constraints, by leading the entire design process and ensure all aspects of a product align, providing great user experiences.
+                <br>My background is quite diverse. I have an MSc in Engineering, in the field of Human-centered AI and prior to that I had worked as a UI developer, after finishing my BSc in Computer Science. But before all that, I was a joint CEO of a commercial-technical company, with two production units of expanded polystyrene.
+                <br>These experiences have shaped my career and give me the advantage of being able to understand in depth the needs of a project.</p>
         </section>
 
         <section id="portfolio">
             <h2>My Work</h2>
             <div class="portfolio-item">
-                <img src="https://via.placeholder.com/300x200" alt="Project 1">
-                <h3>Project 1</h3>
+                <a href="#"><img src="https://via.placeholder.com/300x200" alt="Project 1">
+                    <h3>Project 1</h3></a>
             </div>
             <div class="portfolio-item">
-                <img src="https://via.placeholder.com/300x200" alt="Project 2">
-                <h3>Project 2</h3>
+                <a href="#"><img src="https://via.placeholder.com/300x200" alt="Project 2">
+                    <h3>Project 2</h3></a>
             </div>
             <div class="portfolio-item">
-                <img src="https://via.placeholder.com/300x200" alt="Project 3">
-                <h3>Project 3</h3>
+                <a href="#"><img src="https://via.placeholder.com/300x200" alt="Project 3">
+                    <h3>Project 3</h3></a>
             </div>
         </section>
 
